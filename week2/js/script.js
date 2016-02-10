@@ -10,6 +10,16 @@ submit.onclick = function() {
     var gender = document.getElementById("gender").value;
     console.log(gender);
     
+    var Month = document.getElementById("Month").value;
+    console.log(Month);
+    
+    var day = document.getElementById("day").value;
+    console.log(day);
+    
+    var year = document.getElementById("year").value;
+    console.log(year);
+    
     var message = document.getElementById("message");
-    message.innerHTML = "hello" + name + ", i like " + movies +", I am a " + gender +" ,welcome to my website." ;
+    message.innerHTML = "hello " + name + ", i like " + movies +", I am a " + gender +
+        ", And my date of birth is " + Month +", "+ day +" "+ year +  ", Welcome to my website." ;
 };
