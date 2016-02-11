@@ -20,6 +20,6 @@ submit.onclick = function() {
     console.log(year);
     
     var message = document.getElementById("message");
-    message.innerHTML = "hello " + name + ", i like " + movies +", I am a " + gender +
-        ", And my date of birth is " + Month +", "+ day +" "+ year +  ", Welcome to my website." ;
+    message.innerHTML = "HELLO " + name + ", I like " + movies +", I am a " + gender +
+        ", And my date of birth is " + Month +", "+ day +" "+ year + ".<br><br> "+ " WELCOME TO MY WEBSITE." ;
 };

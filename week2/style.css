@@ -4,13 +4,21 @@ body {
 h1{
     font-family: fantasy;
     font-size: 50px;
-    color: cornflowerblue;
+    color: darkgreen;
+    border: dashed;
+    border-color: bisque;
+    
 }
 label{
-    color: cornflowerblue;
+    color: darkgreen;
+    
    
 }
 
 button{
-    color: cornflowerblue;
+    color: darkgreen;
+}
+
+body{
+    text-align: center;
 }
