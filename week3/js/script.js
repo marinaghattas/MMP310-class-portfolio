@@ -9,7 +9,7 @@ submit.onclick = function() {
     for (var i = 0; i < responseElements.length; i++)
         responses.push(responseElements[i].value);
         
-    console.log(responseElements);
+    
     
     
 //    var myArray = [name, movies, gender, Month, day, year];
