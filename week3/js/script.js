@@ -9,31 +9,7 @@ submit.onclick = function() {
     for (var i = 0; i < responseElements.length; i++)
         responses.push(responseElements[i].value);
         
-    
-    
-    
-//    var myArray = [name, movies, gender, Month, day, year];
-//    var myArray = document.getElementById("myArray");
-    
-    
-//    var name = document.getElementById("name").value;
-//    console.log(name);
-//    
-//    var movies = document.getElementById("movies").value;
-//    console.log(movies);
-//    
-//    var gender = document.getElementById("gender").value;
-//    console.log(gender);
-//    
-//    var Month = document.getElementById("Month").value;
-//    console.log(Month);
-//    
-//    var day = document.getElementById("day").value;
-//    console.log(day);
-//    
-//    var year = document.getElementById("year").value;
-//    console.log(year);
-//    
+ 
     var message = document.getElementById("message");
     
     message.innerHTML = "HELLO " + responses[0] + ", I like " + responses[1] +", I am a " + responses[2] +
