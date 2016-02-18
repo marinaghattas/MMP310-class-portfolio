@@ -5,6 +5,3 @@ body{ font-family: sans-serif;
 h1 { color: blue;
      font-weight: 700;
 }
-li:hover {
-    display: inline-block;
-}
