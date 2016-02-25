@@ -1,0 +1,45 @@
+body{
+    background-color: antiquewhite;
+}
+
+#Ball {
+    position:absolute;
+    left:100px;
+    top:100px;
+}
+#whitecircle {
+    position:absolute;
+    border-style: solid;
+    border: 3px;
+    border-radius:50px;
+    width:100px;
+    height:100px;
+    background-color:white;
+    left:75px;
+    top:150px;
+
+}
+#blackcircle {
+    left:30px;
+    top: 100px;
+    position:absolute;
+    border-style: solid;
+    border: 3px;
+    border-radius:100px;
+    width:200px;
+    height:200px;
+    background-color:black;
+}
+#eight {
+    position:absolute;
+    left:110px;
+    top:165px;
+    font-size:350%;
+    color: blue;
+}
+#click {
+    position:absolute;
+    left:48px;
+    top:332px;
+    font-size:250%;
+}
