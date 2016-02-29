@@ -1,26 +1,15 @@
-var messages = new Array();
-messages[0] = "No";
-messages[1] = "Not today";
-messages[2] = "It is decidedly so";
-messages[3] = "Without a doubt";
-messages[4] = "Yes definitely";
-messages[5] = "You may rely on it";
-messages[6] = "As I see it yes";
-messages[7] = "Most likely";
-messages[8] = "Outlook good";
-messages[10] = "Signs point to yes";
-messages[11] = "Reply hazy try again";
-messages[12] = "Ask again later";
-messages[13] = "Better not tell you now";
-messages[14] = "Cannot predict now";
-messages[15] = "Concentrate and ask again";
-messages[16] = "Don't count on it";
-messages[17] = "My reply is no";
-messages[18] = "My sources say no";
-messages[19] = "Outlook not so good";
-messages[20] = "Very doubtful";
+var messages = [
+    "No", "Not today", "It is decidedly so", "Without a doubt", "Yes definitely", "You may rely on it", "As I see it yes", "Most likely", "Outlook good", "Signs point to yes", "Reply hazy try again", "Ask again later", "Better not tell you now", "Cannot predict now", "Concentrate and ask again", "Don't count on it", "My reply is no", "My sources say no", "Outlook not so good", "Very doubtful"];
 
-result = function () {
-var message = Math.floor(Math.random() * 21);
-    document.getElementById('click').innerHTML = "Answer:  " + messages[message];
-    }
+document.getElementById('blackcircle').onclick = function () {
+    var message = messages[Math.floor(Math.random() * messages.length)];
+    $('#blackcircle').effect("shake");
+    $('#bluecircle').effect("shake");
+    $('#eight').effect("shake");
+
+    document.getElementById('answerContainer').innerHTML = "Answer:  " + message;
+}
+
+document.getElementById('blackcircle').animate = function () {
+    var message = messages[Math.floor(Math.random() * messages.length)];
+}
