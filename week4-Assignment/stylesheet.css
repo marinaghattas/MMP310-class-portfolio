@@ -1,30 +1,21 @@
 body{
-    background-color: antiquewhite;
-    text-align: center;
+    background-color: bisque;
+
 }
 
-
+input{
+    width: 250px;
+}
 
 #Ball {
     position:absolute;
     left:70px;
     top:70px;
 }
-#whitecircle {
-    position:absolute;
-    border-style: solid;
-    border: 3px;
-    border-radius:50px;
-    width:100px;
-    height:100px;
-    background-color:blue;
-    left:630px;
-    top:200px;
 
-}
 #blackcircle {
-    left:580px;
-    top: 150px;
+    left:10px;
+    top: 130px;
     position:absolute;
     border-style: solid;
     border: 3px;
@@ -32,17 +23,28 @@ body{
     width:200px;
     height:200px;
     background-color:black;
+    border: solid;
+    border-color: white;
 }
+#bluecircle {
+    position:absolute;
+    border-style: solid;
+    border: 3px;
+    border-radius:50px;
+    width:100px;
+    height:100px;
+    background-color:blue;
+    left:60px;
+    top:185px;
+    border: solid;
+    border-color: white;
+
+}
+
 #eight {
     position:absolute;
-    left:665px;
-    top:215px;
+    left:95px;
+    top:200px;
     font-size:350%;
-    color: white;
-}
-#click {
-    position:absolute;
-    left:70px;
-    top:70px;
-    font-size:250%;
+    color: aliceblue;
 }
