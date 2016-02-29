@@ -1,11 +1,14 @@
 body{
     background-color: antiquewhite;
+    text-align: center;
 }
+
+
 
 #Ball {
     position:absolute;
-    left:100px;
-    top:100px;
+    left:70px;
+    top:70px;
 }
 #whitecircle {
     position:absolute;
@@ -14,14 +17,14 @@ body{
     border-radius:50px;
     width:100px;
     height:100px;
-    background-color:white;
-    left:75px;
-    top:150px;
+    background-color:blue;
+    left:630px;
+    top:200px;
 
 }
 #blackcircle {
-    left:30px;
-    top: 100px;
+    left:580px;
+    top: 150px;
     position:absolute;
     border-style: solid;
     border: 3px;
@@ -32,14 +35,14 @@ body{
 }
 #eight {
     position:absolute;
-    left:110px;
-    top:165px;
+    left:665px;
+    top:215px;
     font-size:350%;
-    color: blue;
+    color: white;
 }
 #click {
     position:absolute;
-    left:48px;
-    top:332px;
+    left:70px;
+    top:70px;
     font-size:250%;
 }

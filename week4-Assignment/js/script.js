@@ -20,4 +20,7 @@ messages[18] = "My sources say no";
 messages[19] = "Outlook not so good";
 messages[20] = "Very doubtful";
 
-
+result = function () {
+var message = Math.floor(Math.random() * 21);
+    document.getElementById('click').innerHTML = "Answer:  " + messages[message];
+    }
