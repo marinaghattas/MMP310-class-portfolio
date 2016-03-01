@@ -10,6 +10,20 @@ document.getElementById('blackcircle').onclick = function () {
     document.getElementById('answerContainer').innerHTML = "Answer:  " + message;
 }
 
-document.getElementById('blackcircle').animate = function () {
+document.getElementById('bluecircle').onclick = function () {
     var message = messages[Math.floor(Math.random() * messages.length)];
+    $('#blackcircle').effect("shake");
+    $('#bluecircle').effect("shake");
+    $('#eight').effect("shake");
+
+    document.getElementById('answerContainer').innerHTML = "Answer:  " + message;
+}
+
+document.getElementById('eight').onclick = function () {
+    var message = messages[Math.floor(Math.random() * messages.length)];
+    $('#blackcircle').effect("shake");
+    $('#bluecircle').effect("shake");
+    $('#eight').effect("shake");
+
+    document.getElementById('answerContainer').innerHTML = "Answer:  " + message;
 }

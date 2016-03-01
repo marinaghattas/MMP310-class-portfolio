@@ -1,29 +1,25 @@
 body{
     background-color: bisque;
-
+    text-align: center;
 }
 
 input{
     width: 250px;
 }
+#container {
 
-#Ball {
-    position:absolute;
-    left:70px;
-    top:70px;
 }
-
 #blackcircle {
-    left:10px;
-    top: 130px;
+    left:430px;
+    top: 200px;
     position:absolute;
     border-style: solid;
-    border: 3px;
     border-radius:100px;
     width:200px;
     height:200px;
     background-color:black;
     border: solid;
+    border-width: 5px;
     border-color: white;
 }
 #bluecircle {
@@ -34,17 +30,18 @@ input{
     width:100px;
     height:100px;
     background-color:blue;
-    left:60px;
-    top:185px;
+    left:480px;
+    top:250px;
     border: solid;
+    border-width: 4px;
     border-color: white;
 
 }
 
 #eight {
     position:absolute;
-    left:95px;
-    top:200px;
+    left:518px;
+    top:265px;
     font-size:350%;
-    color: aliceblue;
+    color:chartreuse
 }
