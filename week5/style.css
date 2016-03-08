@@ -1,5 +1,29 @@
-body{
+body {
     text-align: center;
-    background: lightblue;
+    background-color: brown
+}
 
+#final {
+    background: #dddada;
+    color: 000000;
+    padding: 3px;
+    text-align: center;
+    width: 150px;
+    cursor: pointer;
+    border: 1px solid gray;
+}
+
+#final:hover {
+    background: #3d91b8;
+    color: #ffffff;
+    padding: 3px;
+    text-align: center;
+    width: 150px;
+    cursor: pointer;
+    border: 1px solid gray;
+}
+#container{
+    border: dashed;
+    border-width: 5px;
+    background-color: blanchedalmond
 }
