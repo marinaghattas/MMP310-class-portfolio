@@ -1,29 +1,38 @@
 body {
     text-align: center;
-    background-color: brown
+    background-color: brown;
+
 }
 
-#final {
+h1, h2{
+    color: brown;
+    font-family:monospace;
+}
+
+#container{
+    border: dashed;
+    border-width: 5px;
+    background-color: blanchedalmond;
+}
+
+
+
+#final1, #final2 , #final3 {
     background: #dddada;
     color: 000000;
     padding: 3px;
     text-align: center;
     width: 150px;
     cursor: pointer;
-    border: 1px solid gray;
+    border: 1px solid brown;
 }
 
-#final:hover {
-    background: #3d91b8;
-    color: #ffffff;
+#final1:hover , #final2:hover , #final3:hover {
+    background: brown;
+    color: white;
     padding: 3px;
     text-align: center;
     width: 150px;
     cursor: pointer;
-    border: 1px solid gray;
-}
-#container{
-    border: dashed;
-    border-width: 5px;
-    background-color: blanchedalmond
+    border: 1px solid brown;
 }

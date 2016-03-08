@@ -1,15 +1,17 @@
 var correct1 = 50;
 var correct2 = "christmasEve";
-var correct3 = "berin";
+var correct3 = "berlin";
 
 var message1 = document.getElementById("message1");
 var message2 = document.getElementById("message2");
 var message3 = document.getElementById("message3");
 
-var final = document.getElementById("final");
+var final1 = document.getElementById("final1");
+var final2 = document.getElementById("final2");
+var final3 = document.getElementById("final3");
 
 
-final.onclick = function () {
+final1.onclick = function () {
 
     var answer1 = document.getElementsByName("questions");
     var answer1Boolean = false;
@@ -24,8 +26,8 @@ final.onclick = function () {
     } else {
         message1.innerHTML = "Try again";
     }
-
-
+}
+final2.onclick = function () {
     var answer2 = document.getElementsByName("day");
     var answer2Boolean = false;
     for (var i = 0; i < answer2.length; i++) {
@@ -34,16 +36,16 @@ final.onclick = function () {
 
         }
     }
-            if (answer2Boolean) {
-            message2.innerHTML = "Your answer is correct";
-        } else {
-            message2.innerHTML = "Try again";
-        }
+    if (answer2Boolean) {
+        message2.innerHTML = "Your answer is correct";
+    } else {
+        message2.innerHTML = "Try again";
+    }
 
+}
 
-
-
-    var answer3 = document.getElementsByName("day");
+final3.onclick = function () {
+    var answer3 = document.getElementsByName("capital");
     var answer3Boolean = false;
     for (var i = 0; i < answer3.length; i++) {
         if (answer3[i].checked && answer3[i].value == correct3) {
@@ -51,11 +53,11 @@ final.onclick = function () {
 
         }
     }
-            if (answer3Boolean) {
-            message3.innerHTML = "Your answer is correct";
-        } else {
-            message3.innerHTML = "Try again";
-        }
+    if (answer3Boolean) {
+        message3.innerHTML = "Your answer is correct";
+    } else {
+        message3.innerHTML = "Try again";
+    }
 
 }
 
