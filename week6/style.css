@@ -1,0 +1,41 @@
+body{
+    text-align: center;
+    font-family: fantasy;
+    background-color: brown;
+    color: brown;
+}
+
+#container{
+    background-color: antiquewhite;
+
+}
+
+#input{
+    background: white;
+    color: 000000;
+    padding: 3px;
+    text-align: center;
+    width: 150px;
+    cursor: pointer;
+    border: 2px solid brown;
+}
+
+#add{
+    background: #dddada;
+    color: 000000;
+    padding: 3px;
+    text-align: center;
+    width: 60px;
+    cursor: pointer;
+    border: 2px solid brown;
+}
+
+#add:hover{
+    background: brown;
+    color: white;
+    padding: 3px;
+    text-align: center;
+    width: 60px;
+    cursor: pointer;
+    border: 1px solid brown;
+}
