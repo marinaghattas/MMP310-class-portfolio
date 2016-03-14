@@ -18,22 +18,27 @@ body{
     border: 2px solid brown;
 }
 
-#add{
+#add , #remove{
     background: #dddada;
     color: 000000;
     padding: 3px;
     text-align: center;
-    width: 60px;
+    width: 80px;
     cursor: pointer;
     border: 2px solid brown;
 }
 
-#add:hover{
+
+#add:hover , #remove:hover{
     background: brown;
     color: white;
     padding: 3px;
     text-align: center;
-    width: 60px;
+    width: 80px;
     cursor: pointer;
     border: 1px solid brown;
+}
+
+#message{
+   font-family:sans-serif;
 }

@@ -1,10 +1,12 @@
-var add = document.getElementById("add");
-add.onclick = function() {
+function toaddlist() {
+    var input = document.getElementById("input")
+    var text = document.createTextNode(input.value)
+    var newMessage = document.createElement("br")
+    input.value = "";
+    message.appendChild(text)
+    document.getElementById("message").appendChild(newMessage)
+}
 
-    var input = document.getElementById("input").value;
-
-    var message = document.createElement("message");
-
-    message.innerHTML  = input;
-
+function toremovelist() {
+    document.getElementById("message").innerHTML = "";
 }
