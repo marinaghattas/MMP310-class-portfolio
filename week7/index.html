@@ -9,24 +9,30 @@
 
 <body>
     <div id="container">
+       <form name="randform">
         <h1>Week 7</h1>
         <h2> Random Password Generator</h2>
+
         <label>what is your name?</label>
         <br>
 
-        <input id="name" type="text" placeholder="Input name" />
+        <input id="name" name="length" type="text" placeholder="Input name" />
         <br>
         <br>
 
         <label>Number Of Characters:</label>
         <br>
 
-        <input id="name" type="text" placeholder="Input length" />
+        <input id="name" type="text" name="length" placeholder="Input length" />
         <br>
         <br>
+        <input type="button" id="button" value="generate" onClick="randomString();">
 
-        <input type="button" id="button" value="Generate">
+        <input type="text" name="randomfield" value="">
+
+        </form>
     </div>
+
     <script src="js/script.js"></script>
 </body>
 
