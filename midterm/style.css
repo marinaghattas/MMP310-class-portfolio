@@ -1,0 +1,63 @@
+body {
+    text-align: center;
+    font-family: cursive;
+    background-color:brown;
+}
+
+#form{
+    background-color:lightcoral;
+}
+
+#story {
+    font-family: cursive;
+    text-align: center;
+    background-color: brown;
+    color: bisque;
+    font-size: 30px;
+    position: fixed;
+    top: 300px;
+
+
+}
+
+
+input[type=text] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+input[type=text]:hover {
+    border: 3px solid #555;
+}
+
+input[type=text]:focus {
+    border: 3px solid #555;
+}
+
+#submit{
+    background: #dddada;
+    color: 000000;
+    padding: 3px;
+    text-align: center;
+    width: 80px;
+    cursor: pointer;
+    border: 2px solid brown;
+    font-family: sans-serif;
+}
+
+
+#submit:hover{
+    background-color: brown;
+    color: white;
+    padding: 3px;
+    text-align: center;
+    width: 80px;
+    cursor: pointer;
+    border: 1px solid black;
+
