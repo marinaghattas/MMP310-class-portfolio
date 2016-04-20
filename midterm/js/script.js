@@ -16,6 +16,6 @@ submit.onclick = function () {
     story.innerHTML = "My name is " + name + " and I am " + old + "years old. My favorite sport is " + sport + " My favorite color is " + color + ". i love " + food + " and i really want to go visit " + place + ". " + "<br> <br> Thank you " + "☺.";
 }
     else{
-        story.innerHTML = "                 Try again";
+        story.innerHTML = " Try again";
     }
 }
