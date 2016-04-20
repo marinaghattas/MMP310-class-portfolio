@@ -1,4 +1,4 @@
-var player; // global object
+var player;
 var speed = 0.1;
 
 var gravity = 1;
