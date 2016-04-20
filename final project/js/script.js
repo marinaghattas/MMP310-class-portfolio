@@ -6,11 +6,11 @@ var collectibles;
 
 
 function setup() {
-   // console.log('setup');
+    // console.log('setup');
     createCanvas(1195, 725);
 
-    pacman = createSprite(1150,50,0,0);
-    pacman.addAnimation("still", "images/pacman1.png","images/pacman2.png");
+    pacman = createSprite(1150, 50, 0, 0);
+    pacman.addAnimation("still", "images/pacman1.png", "images/pacman2.png");
 
     //create two groups
     obstacles = new Group();
@@ -23,16 +23,15 @@ function setup() {
 
 }
 
-function setupCanvas(){
+function setupCanvas() {
     background('#222222');
 }
 
 
 
-function draw(){
+function draw() {
     setupCanvas();
-    fill('green')
-    ;
+    fill('green');
     drawSprites();
 
     pacman.collide(obstacles)
@@ -41,32 +40,32 @@ function draw(){
 }
 
 function jsonLoaded(data) {
-    console.log('jsonLoaded',data);
+    console.log('jsonLoaded', data);
     var walls = data.levels[currentLevel].walls;
-    console.log('walls',walls);
+    console.log('walls', walls);
     for (var i = 0; i < walls.length; i++) {
         var wall = createSprite(walls[i][0], walls[i][1], walls[i][2], walls[i][3]);
         obstacles.add(wall);
 
         wall.wallx = walls[i][2];
         wall.wally = walls[i][3];
-        wall.draw = function(){
+        wall.draw = function () {
             fill(data.levels[currentLevel].wallColor);
-            rect(0,0, this.wallx, this.wally );
+            rect(0, 0, this.wallx, this.wally);
         }
 
     }
 
 
     var dots = data.levels[currentLevel].dots;
-    console.log('dots',dots);
+    console.log('dots', dots);
     for (var i = 0; i < dots.length; i++) {
         var dot = createSprite(dots[i][0], dots[i][1], dots[i][2], dots[i][3]);
         collectibles.add(dot);
 
-         dot.draw = function(){
+        dot.draw = function () {
             fill(data.levels[currentLevel].dotsColor);
-            ellipse(0,0, 10,10);
+            ellipse(0, 0, 10, 10);
         }
     }
 
@@ -76,51 +75,49 @@ function jsonLoaded(data) {
 
 
 function keyPressed() {
-  if (keyCode == UP_ARROW) {
-//    circle.position.y -= 5;
-      pacman.setSpeed(2,270);
-      pacman.changeAnimation("still");
-  } else if (keyCode == DOWN_ARROW) {
-    pacman.position.y += 5;
-      pacman.setSpeed(2,90);
-      pacman.changeAnimation("down");
-  }
+    if (keyCode == UP_ARROW) {
+        //    circle.position.y -= 5;
+        pacman.setSpeed(2, 270);
+        pacman.changeAnimation("still");
+    } else if (keyCode == DOWN_ARROW) {
+        pacman.position.y += 5;
+        pacman.setSpeed(2, 90);
+        pacman.changeAnimation("down");
+    }
     if (keyCode == LEFT_ARROW) {
-//    circle.position.y -= 5;
-      pacman.setSpeed(2,180);
-      pacman.changeAnimation("still");
-  } else if (keyCode == RIGHT_ARROW) {
-    pacman.position.x -= 5;
-      pacman.setSpeed(2,360);
-      pacman.changeAnimation("Left");
-      //return false; // prevent default
-  }
+        //    circle.position.y -= 5;
+        pacman.setSpeed(2, 180);
+        pacman.changeAnimation("still");
+    } else if (keyCode == RIGHT_ARROW) {
+        pacman.position.x -= 5;
+        pacman.setSpeed(2, 360);
+        pacman.changeAnimation("Left");
+        //return false; // prevent default
+    }
 }
 
-function collect(collector, collected)
-{
+function collect(collector, collected) {
 
-  collected.remove();
+    collected.remove();
 }
 
 var seconds = 60;
 
 function secondPassed() {
-  var minutes = Math.round((seconds - 30)/60),
-      remainingSeconds = seconds % 60;
-  
-  if (remainingSeconds < 10) {
-    remainingSeconds = "0" + remainingSeconds;  
-  }
-  
-  document.getElementById('countdown').innerHTML = minutes + ":" + remainingSeconds;
-  if (seconds == 0 && dots == 0 ) {
-    clearInterval(countdownTimer);
-    document.getElementById('countdown').innerHTML = "YOU LOST";
-  } else {
-    seconds--;
-  }
-}
- 
-var countdownTimer = setInterval('secondPassed()', 1000);
+    var minutes = Math.round((seconds - 30) / 60),
+        remainingSeconds = seconds % 60;
 
+    if (remainingSeconds < 10) {
+        remainingSeconds = "0" + remainingSeconds;
+    }
+
+    document.getElementById('countdown').innerHTML = minutes + ":" + remainingSeconds;
+    if (seconds == 0 && dots == 0) {
+        clearInterval(countdownTimer);
+        document.getElementById('countdown').innerHTML = "YOU LOST";
+    } else {
+        seconds--;
+    }
+}
+
+var countdownTimer = setInterval('secondPassed()', 1000);
