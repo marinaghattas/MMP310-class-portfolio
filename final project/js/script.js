@@ -101,7 +101,7 @@ function collect(collector, collected) {
     collected.remove();
 }
 
-var seconds = 60;
+var seconds = 900;
 
 function secondPassed() {
     var minutes = Math.round((seconds - 30) / 60),
@@ -111,8 +111,8 @@ function secondPassed() {
         remainingSeconds = "0" + remainingSeconds;
     }
 
-    document.getElementById('countdown').innerHTML = minutes + ":" + remainingSeconds;
-    if (seconds == 0 && dots == 0) {
+    document.getElementById('countdown').innerHTML = "Timer: "+ minutes + ":" + remainingSeconds;
+    if (seconds == 0) {
         clearInterval(countdownTimer);
         document.getElementById('countdown').innerHTML = "YOU LOST";
     } else {
