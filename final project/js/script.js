@@ -1,7 +1,12 @@
 var currentLevel;
 var pacman;
 var collectibles;
-
+var enemy1;
+var enemy2;
+var enemy3;
+//var direction1 = 270;
+//var direction2 = 360;
+//var direction3 = 360;
 
 
 
@@ -11,7 +16,20 @@ function setup() {
 
     pacman = createSprite(1150, 50, 0, 0);
     pacman.addAnimation("still", "images/pacman1.png", "images/pacman2.png");
-
+    
+    
+    enemy1 = createSprite(50, 35, 0, 0);
+    enemy1.addAnimation("still", "images/enemy1.png");
+    enemy1.setSpeed(5,360);
+    
+    enemy2 = createSprite(1150, 690, 0, 0);
+    enemy2.addAnimation("still", "images/enemy2.png");
+    enemy2.setSpeed(5,270);
+    
+    enemy3 = createSprite(50, 670, 0, 0);
+    enemy3.addAnimation("still", "images/enemy3.png");
+    enemy3.setSpeed(5, 270);
+    
     //create two groups
     obstacles = new Group();
     collectibles = new Group();
@@ -35,6 +53,17 @@ function draw() {
     drawSprites();
 
     pacman.collide(obstacles)
+    
+    if (enemy1.collide(obstacles))
+        enemy1.setSpeed(5,360);
+    else if ( enemy2.collide(obstacles))
+        enemy2.setSpeed(5,270);
+    
+    else if (enemy3.collide(obstacles))
+        enemy3.setSpeed(5, 270);
+    
+    
+    
     pacman.overlap(collectibles, collect)
 
 }
@@ -95,6 +124,8 @@ function keyPressed() {
         //return false; // prevent default
     }
 }
+
+
 
 function collect(collector, collected) {
 
