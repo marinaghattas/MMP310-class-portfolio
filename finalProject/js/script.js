@@ -1,9 +1,7 @@
 var currentLevel;
 var pacman;
 var collectibles;
-var enemy1;
-var enemy2;
-var enemy3;
+
 //var direction1 = 270;
 //var direction2 = 360;
 //var direction3 = 360;
@@ -11,8 +9,10 @@ var enemies;
 
 var directions = [90, 180, 270, 360];
 
-var lose = false;
-var win = false;
+var state = 0;
+// 0: playing
+// 1: lost (timer or ghost)
+// 2: won!
 
 var totalDots;
 
@@ -54,14 +54,14 @@ function Enemy(x, y, img) {
     this.s.addAnimation("still", img);
     this.s.setSpeed(5, 90);
     this.s.setCollider("circle", 0, 0, 20, 20);
-    this.speed = random(5, 10);
+    this.speed = random(3, 8);
     /* this.s.debug = true;*/
 }
 
 
 function draw() {
     background('#222222');
-    if (!lose) {
+    if (state == 0) {
 
         fill('green');
         drawSprites();
@@ -74,15 +74,22 @@ function draw() {
             });
 
             enemies[i].s.collide(pacman, function () {
-                lose = true;
+                //lose = true;
+                state = 1;
             });
         }
 
         pacman.overlap(collectibles, collect);
-    } else {
-
-        fill("white");
-        text("you lost", 100, 100);
+    } else if (state == 1) {
+        clearInterval(countdownTimer);
+        fill("rgb(0, 121, 242)");
+        textSize(50);
+        text("you lost, please try again", 400, 300);
+    } else if (state == 2) {
+        clearInterval(countdownTimer);
+        fill("rgb(0, 121, 242)");
+        textSize(50);
+        text("you won!", 400, 300);
     }
 
 
@@ -151,11 +158,11 @@ function keyPressed() {
 
 function collect(collector, collected) {
     totalDots--;
-    //    if (totalDots == 0)
-    //        win = true;
-    //    else {
-    //        fill("white");
-    //        text("you lose", 100, 100);}
+    if (totalDots == 1) {
+        state = 2;
+        clearInterval(countdownTimer);
+    }
+
     collected.remove();
 }
 
@@ -172,29 +179,28 @@ function secondPassed() {
 
 
     document.getElementById('countdown').innerHTML = "Timer: " + minutes + ":" + remainingSeconds;
-    if (seconds == 0 && totalDots != 0 && lose) {
+    if (seconds == 0 && totalDots != 0 && state == 0) {
         clearInterval(countdownTimer);
-        fill("white");
-        text("you lost", 100, 100);
-        lose = true;
+        fill("rgb(0, 121, 242)");
+        textSize(50);
+        text("you lost, please try again", 400, 300);
+        state = 1;
+
     } else {
         seconds--;
 
-        fill("white");
-        text("you won", 100, 100);
+        fill("rgb(0, 121, 242)");
+        textSize(50);
+        text("you won!", 400, 300);
     }
 }
-if (!lose)
-var countdownTimer = setInterval('secondPassed()', 1000);
+if (state == 0)
+var countdownTimer = setInterval(secondPassed, 1000);
 else{
-    fill("white");
-    text("you won", 100, 100);
+    fill("rgb(0, 121, 242)");
+    textSize(50);
+    text("you won!", 400, 300);
 }
 
 
-//function addScore(nScore) {
-//        score += nScore;
-//        if (score >= 10000 && score - nScore < 10000) {
-//            lives += 1;
-//        }
-//    };
+
