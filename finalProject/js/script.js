@@ -54,7 +54,7 @@ function Enemy(x, y, img) {
     this.s.addAnimation("still", img);
     this.s.setSpeed(5, 90);
     this.s.setCollider("circle", 0, 0, 20, 20);
-    this.speed = random(3, 8);
+    this.speed = random(3, 10);
     /* this.s.debug = true;*/
 }
 
