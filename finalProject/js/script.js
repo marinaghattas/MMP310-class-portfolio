@@ -17,8 +17,17 @@ var state = 0;
 var totalDots;
 
 function setup() {
-    // console.log('setup');
     createCanvas(1195, 725);
+    var url = "data/setup.json";
+    loadJSON(url, jsonLoaded);
+
+
+
+
+
+
+    // console.log('setup');
+
 
     pacman = createSprite(1150, 50, 0, 0);
     //pacman.debug = true;
@@ -38,16 +47,12 @@ function setup() {
     obstacles = new Group();
     collectibles = new Group();
 
-    setupCanvas()
     currentLevel = 0; //start at level one
-    var url = "data/setup.json";
-    loadJSON(url, jsonLoaded);
+
 
 }
 
-function setupCanvas() {
-    background('#222222');
-}
+
 
 function Enemy(x, y, img) {
     this.s = createSprite(x, y);
@@ -84,7 +89,10 @@ function draw() {
         clearInterval(countdownTimer);
         fill("rgb(0, 121, 242)");
         textSize(50);
-        text("you lost, please try again", 400, 300);
+        text("you lost, please press any key to try again!", 150, 300);
+        document.addEventListener("keydown", function () {
+            window.location.reload();
+        });
     } else if (state == 2) {
         clearInterval(countdownTimer);
         fill("rgb(0, 121, 242)");
@@ -166,7 +174,7 @@ function collect(collector, collected) {
     collected.remove();
 }
 
-var seconds = 600;
+var seconds = 180;
 
 function secondPassed() {
     var minutes = Math.round((seconds - 30) / 60),
@@ -183,8 +191,12 @@ function secondPassed() {
         clearInterval(countdownTimer);
         fill("rgb(0, 121, 242)");
         textSize(50);
-        text("you lost, please try again", 400, 300);
+        text("you lost, please press any key to try again", 150, 300);
+        document.addEventListener("keydown", function () {
+            window.location.reload();
+        });
         state = 1;
+
 
     } else {
         seconds--;
@@ -195,12 +207,9 @@ function secondPassed() {
     }
 }
 if (state == 0)
-var countdownTimer = setInterval(secondPassed, 1000);
-else{
+    var countdownTimer = setInterval(secondPassed, 1000);
+else {
     fill("rgb(0, 121, 242)");
     textSize(50);
     text("you won!", 400, 300);
 }
-
-
-
